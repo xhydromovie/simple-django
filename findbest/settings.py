@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'findbest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rfxbnxzf',
+        'USER': 'rfxbnxzf',
+        'PASSWORD': 'uPoE9tOvXNqpO9TvNCrJ-NeVZ1zip_ad',
+        'HOST': 'horton.elephantsql.com',
+        'PORT': '5432',
     }
 }
 
