@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from findbest import views
 
 urlpatterns = [
+    path('', views.index_view, name='homepage'),
     path('admin/', admin.site.urls),
     path('find/', include('recommend.urls')),
     path('blog/', include('blog.urls')),
