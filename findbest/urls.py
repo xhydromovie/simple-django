@@ -19,7 +19,7 @@ from findbest import views
 
 urlpatterns = [
     path('', views.index_view, name='homepage'),
-    path('admin/', admin.site.urls),
     path('find/', include('recommend.urls')),
     path('blog/', include('blog.urls')),
+    path('admin/', admin.site.urls),
 ]

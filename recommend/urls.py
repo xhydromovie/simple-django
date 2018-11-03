@@ -2,6 +2,8 @@ from django.urls import path
 
 from . import views
 
+app_name = 'recommend'
 urlpatterns = [
-    path('', views.find_main, name='find_index'),
+    path('', views.index, name='find_index'),
+    path('smartphone/<int:s_id>', views.recommend_detail, name='smartphone')
 ]
