@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+    <form action="/find/smartphone/result" method="get">
+        <input type="text" name="main">
+        <input type="text" name="system">
+        <input type="text" name="size">
+        <input type="submit" value="Search">
+    </form>
+{% endblock %}

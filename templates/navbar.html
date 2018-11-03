@@ -1,12 +1,41 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-tob custom-navbar">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-tob custom-navbar">
     <div class="container">
-        <a class="navbar-brand" id="booktrade" href="{% url 'homepage' %}">Findbest</a>
+        <a class="navbar-brand" href="{% url 'homepage' %}">Findbest</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{% url 'recommend:find_index' %}">Znajdź</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="url 'recommend:smartphones'">Smartfony</a>
+                    <a class="dropdown-item" href="#">Laptopy</a>
+                    <a class="dropdown-item" href="#">Słuchawki</a>
+                  </div>
                 <a class="nav-item nav-link" href="#">Ranking</a>
                 <a class="nav-item nav-link" href="#">Blog</a>
             </div>
         </div>
     </div>
-</nav>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'homepage' %}">Findbest</a>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Okazje</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Znajdź produkt
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'recommend:smartphones' %}">Smartfony</a>
+            <a class="dropdown-item" href="#">Laptopy</a>
+            <a class="dropdown-item" href="#">Słuchawki</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>

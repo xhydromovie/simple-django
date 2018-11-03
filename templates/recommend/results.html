@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    {% for smartphone in objects %}
+    <div class="row">
+        <div class="col">
+            <a href="/find/smartphone/{{smartphone.id}}">
+                <h1>{{ smartphone.name }}</h1>
+            </a>
+        </div>
+        <div class="col-3"
+                <h2>{{ smartphone.fit }}%</h2>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

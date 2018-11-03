@@ -9,6 +9,10 @@ class Smartphone(models.Model):
     cpu = models.CharField(max_length=40)
     gpu = models.CharField(max_length=40)
     ram = models.IntegerField()
+    camera_rate = models.IntegerField(default=5)
+    fit = models.IntegerField(default=0)
+    system = models.CharField(max_length=8, default='android')
+    size = models.CharField(max_length=7, default='medium')
 
     def __str__(self):
         return self.name
