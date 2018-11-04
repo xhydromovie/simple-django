@@ -12,15 +12,17 @@ def smartphone(request):
 
 # ../find/smartphone/result
 def smartphone_result(request):
+    #get values from query
     if 'main' in request.GET:
         main = request.GET['main']
         system = request.GET['system']
         size = request.GET['size']
 
+    #get calculated list (fit)
     obj = calculate(main, system, size)
 
     context = {
-        'objects': obj
+        'objects': obj[:10], #get 10 best smartphones
     }
 
     return render(request, 'recommend/results.html', context)

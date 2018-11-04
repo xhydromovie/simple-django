@@ -3,7 +3,6 @@ from .models import Smartphone
 #TODO: budget
 def calculate(main, system, size):
     smartphones = Smartphone.objects.all().filter(system=system)
-    calculated = []
 
     for smartphone in smartphones:
         fit = 0
@@ -19,10 +18,9 @@ def calculate(main, system, size):
         if smartphone.size == size:
             fit += 20
 
-        smartphone.fit = fit
-        calculated.append(smartphone)
+        smartphone.fit = fit #modify fit
     
-    return calculated
+    return smartphones
 
     # for smartphone in smartphones:
     #     if smartphone.screen_size < 4.5:
