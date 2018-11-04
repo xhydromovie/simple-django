@@ -4,12 +4,18 @@ from .models import Smartphone
 def calculate(main, system, size):
     smartphones = Smartphone.objects.all().filter(system=system)
 
+    """
+        Algorytm po przyjęciu parametrów z query liczy dopasowanie i zwraca zmodyfikowany model (pole - fit).
+    """
+
+
+
     for smartphone in smartphones:
         fit = 0
         if main == 'camera':
             fit += smartphone.camera_rate * 5
         elif main == 'efficient':
-            fit += smartphone.eficient_rate * 5
+            fit += smartphone.efficient_rate * 5
         elif main == 'battery':
             fit += smartphone.battery_rate * 5
         elif main == 'display':
@@ -17,8 +23,9 @@ def calculate(main, system, size):
         
         if smartphone.size == size:
             fit += 20
-
+        
         smartphone.fit = fit #modify fit
+        print(smartphone.efficient_rate)
     
     return smartphones
 

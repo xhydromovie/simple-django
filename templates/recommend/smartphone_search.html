@@ -1,10 +1,40 @@
 {% extends 'base.html' %}
+{% load static %}
 
+{% block script %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+    
 {% block content %} 
-    <form action="/find/smartphone/result" method="get">
+    <!-- <form action="/find/smartphone/result" method="get">
         <input type="text" name="main">
         <input type="text" name="system">
         <input type="text" name="size">
         <input type="submit" value="Search">
-    </form>
+    </form> -->
+    <div class="container">
+        <form id="example-form" action="/find/smartphone/result" method="get">
+            <div>
+                <h3>Cecha</h3>
+                <section>
+                    <input id="userName" name="main" value="camera" type="radio" class="required"> <label for="userName">Aparat</label>
+                    <input id="efficient" name="main" value="efficient" type="radio" class="required"> <label for="efficient">Wydajność</label>
+                    <input id="battery" name="main" value="battery" type="radio" class="required"> <label for="battery">Bateria</label>
+                    <input id="display" name="main" value="display" type="radio" class="required"> <label for="display">Wyświetlacz</label>
+                </section>
+                <h3>System</h3>
+                <section>
+                    <input id="ios" name="system" value="android" type="radio" class="required"> <label for="ios">iOS</label>
+                    <input id="android" name="system" type="radio" value="android" class="required"> <label for="userName">Android</label>
+                </section>
+                <h3>Size</h3>
+                <section>
+                    <input id="size" name="size" value="small" type="radio" class="required"> <label for="size">Small</label>
+                    <input id="size" name="size" value="medium" type="radio" class="required"> <label for="size">Medium</label>
+                    <input id="size" name="size" value="huge" type="radio" class="required"> <label for="size">Huge</label>
+                </section>
+                <input type="submit" value="Search">
+            </div>
+        </form>
+    </div>
 {% endblock %}

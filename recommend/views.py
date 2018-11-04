@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Smartphone
 from .algorithm import calculate
 
@@ -17,6 +17,8 @@ def smartphone_result(request):
         main = request.GET['main']
         system = request.GET['system']
         size = request.GET['size']
+    else:
+        return redirect('/') # redirecting
 
     #get calculated list (fit)
     obj = calculate(main, system, size)
