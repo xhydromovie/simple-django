@@ -25,7 +25,6 @@ def calculate(main, system, size):
             fit += 20
         
         smartphone.fit = fit #modify fit
-        print(smartphone.efficient_rate)
     
     return smartphones
 
