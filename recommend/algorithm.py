@@ -8,10 +8,9 @@ def calculate(main, system, size):
         Algorytm po przyjęciu parametrów z query liczy dopasowanie i zwraca zmodyfikowany model (pole - fit).
     """
 
-
-
     for smartphone in smartphones:
         fit = 0
+
         if main == 'camera':
             fit += smartphone.camera_rate * 5
         elif main == 'efficient':
@@ -21,6 +20,7 @@ def calculate(main, system, size):
         elif main == 'display':
             fit += smartphone.display_rate * 5
         
+
         if smartphone.size == size:
             fit += 20
         

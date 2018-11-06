@@ -8,10 +8,14 @@ def index(request):
 
 # ../find/smartphone
 def smartphone(request):
+    print(request.method)
     return render(request, 'recommend/smartphone_search.html')
 
 # ../find/smartphone/result
 def smartphone_result(request):
+
+    dictionary = request.GET
+    print(dictionary)
     #get values from query
     if 'main' in request.GET:
         main = request.GET['main']

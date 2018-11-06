@@ -77,14 +77,14 @@ WSGI_APPLICATION = 'findbest.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'p7715_findbest',
-        # 'USER': 'p7715_findbest',
-        # 'PASSWORD': 'grGao3ucBoMOWanjJxKg',
-        # 'HOST': 'pgsql.ct8.pl',
-        # 'PORT': '5432',
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'findbest',
+        'USER': 'findbest',
+        'PASSWORD': 'grGao3ucBoMOWanjJxKg',
+        'HOST': 'localhost',
+        'PORT': '5433',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -124,6 +124,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = ''
