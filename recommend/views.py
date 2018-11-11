@@ -14,18 +14,13 @@ def smartphone(request):
 # ../find/smartphone/result
 def smartphone_result(request):
 
-    dictionary = request.GET
-    print(dictionary)
-    #get values from query
-    if 'main' in request.GET:
-        main = request.GET['main']
-        system = request.GET['system']
-        size = request.GET['size']
-    else:
+    if 'main' not in request.GET:
         return redirect('/') # redirecting
 
+    dictionary = request.GET
+
     #get calculated list (fit)
-    obj = calculate(main, system, size)
+    obj = calculate(dictionary)
 
     context = {
         'objects': obj[:10], #get 10 best smartphones
@@ -40,5 +35,7 @@ def smartphone_detail(request, s_id):
     context = {
         'object': obj
     }
+
+
 
     return render(request, 'recommend/detail.html', context)
