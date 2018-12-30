@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
-
 {% load static %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/index_style.css' %}">  
+{% endblock head %}
+    
+
 {% block content %}
-    <p>Homepage</p>
+    <div class="container">
+        <h1>Czego dzisiaj szukasz?</h1>
+    </div>
 {% endblock %}

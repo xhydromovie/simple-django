@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/search_style.css' %}">      
+{% endblock head %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="well">
+        <h1 class="text-center">Result</h1>
+        <div class="list-group">
+        {% if objects %}   
+            {% for smartphone in objects|dictsortreversed:"fit" %}
+                <a href="/find/smartphone/{{smartphone.id}}" class="list-group-item my_flex">
+                        <div class="media col-md-3 smartphone_img">
+                            <figure class="pull-left">
+                                <!-- <img class="media-object img-rounded img-responsive" src="{{ smartphone.image_url }}"> -->
+                                <img class="media-object img-rounded img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/61UCCLPOPbL._SX679_.jpg">
+                            </figure>
+                        </div>
+                        <div class="col-md-6 desc">
+                            <h4 class="list-group-item-heading"> {{ smartphone.name }} </h4>
+                            <p class="list-group-item-text">  eu vivendo expetendis vim. Voluptua vituperatoribus et mel, ius no elitr deserunt mediocrem. Mea facilisi torquatos ad.
+                            </p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <h2 class="fit">{{ smartphone.fit }}%</h2>
+                        </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <div class="list-group-item">
+                <h1>Nic nie znaleźliśmy, spróbuj wyszukać jeszcze raz</h1>
+            </div>
+        {% endif %}
+</div>
+{% endblock %}

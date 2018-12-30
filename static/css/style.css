@@ -6,7 +6,7 @@
     font-size: 20px;
     margin-bottom: 30px;
 } */
-
+/* 
 a.list-group-item {
     height:auto;
     min-height:220px;
@@ -14,3 +14,11 @@ a.list-group-item {
 a.list-group-item.active small {
     color:#fff;
 }
+
+.logo {
+    width: 80%;
+    height: auto;
+}
+.helo {
+    height: 20px;
+} */

@@ -5,8 +5,8 @@ def calculate(d):
     my_d = d.dict()
     helper = {}
     diffrence = 0
-
-    smartphones = Smartphone.objects.all().filter(price__range=(0, my_d.get('price')), system=my_d.get('system'))
+    
+    smartphones = Smartphone.objects.all().filter(price__range=(my_d.get('price_min'), my_d.get('price_max')), system=my_d.get('system'))
     print(smartphones)
 
     for smartphone in smartphones:
@@ -26,7 +26,7 @@ def calculate(d):
 
         fit = fit/num
 
-        if smartphone.size == d.getlist('size')[0]:
+        if smartphone.size == d.getlist('size')[0]: # if size is good
             fit += 20
 
         smartphone.fit = int(fit) #modify fit
@@ -44,9 +44,6 @@ def calculate(d):
     for smartphone in smartphones:
         if smartphone.id == 1:
             print(smartphone.name, smartphone.fit)
-
-    print (helper)
-    print (max(helper, key=helper.get))
 
     return smartphones
 

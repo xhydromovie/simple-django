@@ -1,13 +1,111 @@
 {% extends 'base.html' %}
+{% load findbest_tags %}
 
 {% block content %}
     <div class="container">
         <div class="main">
             <div class="row">
-                <!-- <img src="{{ object.image_url }}" class="imag"> -->
-                <h1>{{ object.name }}</h1>
-                <h1>{{ object.camera_rate }}</h1>
+                <!-- <img src="{{ object.image_url }}"> -->
+                <div class="col-4">
+                    <img class="img-fluid" src="https://images-na.ssl-images-amazon.com/images/I/61UCCLPOPbL._SX679_.jpg">
+                </div>
+                <div class="col">
+                    <h1>{{ object.name }}</h1>
+                </div>
             </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div>
+                    <h1>Bateria</h1>
+                    <div class="progress helo">
+                        <div class="progress-bar" role="progressbar" style="width: {{ object.battery_rate|multi:10 }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div>
+                    <h1>Wydajność</h1>
+                    <div class="progress helo">
+                        <div class="progress-bar" role="progressbar" style="width: {{ object.efficient_rate|multi:10 }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div>
+                    <h1>Wyświetlacz</h1>
+                    <div class="progress helo">
+                        <div class="progress-bar" role="progressbar" style="width: {{ object.display_rate|multi:10 }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div>
+                    <h1>Aparat</h1>
+                    <div class="progress helo">
+                        <div class="progress-bar" role="progressbar" style="width: {{ object.camera_rate|multi:10 }}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1>Recenzje</h1>
+            <div class="container">
+                <h2>Recenzja 1</h2>
+                <a href="{{ object.review_url_1}} ">
+                    <img src="{{ object.review_url_1|thumbnail }}" alt="">
+                </a>
+            </div>
+            <div class="container">
+                <h2>Recenzja 1</h2>
+                <a href="{{ object.review_url_2}} ">
+                    <img src="{{ object.review_url_2|thumbnail }}" alt="">
+                </a>
+            </div>
+            <div class="container">
+                <h2>Recenzja 1</h2>
+                <a href="{{ object.review_url_3}} ">
+                    <img src="{{ object.review_url_3|thumbnail }}" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <ul class="list-group">
+                    {% for item in object.pros|listed %}
+                    <li class="list-group-item">{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-6">
+                <ul class="list-group">
+                        {% for item in object.cons|listed %}
+                        <li class="list-group-item">{{ item }}</li>
+                        {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="col">CPU</th>
+                        <td scope="col">Qualcom snapdragon 820</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">GPU</th>
+                        <td scope="col">Adreno 530</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Wyświetlacz</th>
+                        <td scope="col">7"</td>
+                        <td scope="col">1920x1080</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Pamięć</th>
+                        <td scope="col">8GB RAM</td>
+                        <td scope="col">256GB ROM</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Jack</th>
+                        <td scope="col">Tak</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock %}

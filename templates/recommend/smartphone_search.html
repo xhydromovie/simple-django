@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/search_style.css' %}">
+{% endblock head %}
+    
 {% block script %}
     <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
@@ -13,6 +18,13 @@
         <input type="submit" value="Search">
     </form> -->
     <div class="container">
+        <div class="content">
+            <div class="feature"></div>
+            <div class="system"></div>
+            <div class="size"></div>
+            <div class="budget"></div>
+        </div>
+
         <form id="example-form" action="/find/smartphone/result" method="get">
             <div>
                 <h3>Cecha</h3>
@@ -35,7 +47,8 @@
                 </section>
                 <h3>Budget</h3>
                 <section>
-                    <input required id="size" name="price" placeholder="Wpisz twój budżet" type="number" class="required"> <label for="size">ZŁ</label>
+                    <input required id="size" value=0 name="price_min" placeholder="Cena min" type="number" class="required"> <label for="size">ZŁ</label>
+                    <input required id="size" value=3000 name="price_max" placeholder="Cena max" type="number" class="required"> <label for="size">ZŁ</label>
                 </section>
                 
                 <input type="submit" value="Search">

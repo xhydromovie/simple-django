@@ -3,34 +3,32 @@
 
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">      
+<link rel="stylesheet" href="{% static 'css/search_style.css' %}">      
 {% endblock head %}
 
 
 {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="well">
-        <h1 class="text-center">Result</h1>
-        <div class="list-group">
+    <h1 class="text-center">Result</h1>
         {% if objects %}   
             {% for smartphone in objects|dictsortreversed:"fit" %}
-                <a href="/find/smartphone/{{smartphone.id}}" class="list-group-item my_flex">
-                        <div class="media col-md-3">
-                            <figure class="pull-left">
+                <a href="/find/smartphone/{{smartphone.id}}">
                                 <!-- <img class="media-object img-rounded img-responsive" src="{{ smartphone.image_url }}"> -->
-                            </figure>
+                    <div class="row result-item">
+                        <div class="col-2">
+                            <img class="img-fluid" src="https://images-na.ssl-images-amazon.com/images/I/61UCCLPOPbL._SX679_.jpg">
                         </div>
-                        <div class="col-md-6">
-                            <h4 class="list-group-item-heading"> {{ smartphone.name }} </h4>
-                            <p class="list-group-item-text"> Qui diam libris ei, vidisse incorrupte at mel. His euismod salutandi dissentiunt eu. Habeo offendit ea mea. Nostro blandit sea ea, viris timeam molestiae an has. At nisl platonem eum. 
-                                    Vel et nonumy gubergren, ad has tota facilis probatus. Ea legere legimus tibique cum, sale tantas vim ea, eu vivendo expetendis vim. Voluptua vituperatoribus et mel, ius no elitr deserunt mediocrem. Mea facilisi torquatos ad.
-                            </p>
+                        <div class="col">
+                            <h4 class="list-group-item-heading">{{ smartphone.name }}</h4>
+                            <div class="hidden-sm-down">
+                                <p class="list-group-item-text ">eu vivendo expetendis vim. Voluptua vituperatoribus et mel, ius no elitr deserunt mediocrem. Mea facilisi torquatos ad.</p>
+                            </div>
                         </div>
-                        <div class="col-md-3 text-center">
+                        <div class="col-3 visible-md">
                             <h2 class="fit">{{ smartphone.fit }}%</h2>
                         </div>
+                    </div>           
                 </a>
             {% endfor %}
         {% else %}

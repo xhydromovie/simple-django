@@ -21,10 +21,10 @@ class Smartphone(models.Model):
     review_url_1 = models.CharField(max_length=200, default='')
     review_url_2 = models.CharField(max_length=200, default='')
     review_url_3 = models.CharField(max_length=200, default='')
-    camera_rate = models.IntegerField(default=5)
-    battery_rate = models.IntegerField(default=5)
-    efficient_rate = models.IntegerField(default=5)
-    display_rate = models.IntegerField(default=5)
+    camera_rate = models.FloatField(default=5)
+    battery_rate = models.FloatField(default=5)
+    efficient_rate = models.FloatField(default=5)
+    display_rate = models.FloatField(default=5)
     dimensions = models.CharField(default='', max_length=30)
     
 
